@@ -38,15 +38,16 @@ public class Insect {
         System.out.println(name+" has been wake up.");
     }
     public static void main(String[] args) throws Exception {
-        Insect insects[] = new Insect[4];
-        insects[0] = new Insect("Bodya", 8, false, true, false);
-        insects[1] = new Insect("mosquito", 6, true, false, false);
-        insects[2] = getInstance();
-        insects[3] = getInstance();
+        Insect insects[] = {
+            new Insect("Bodya", 8, false, true, false),
+            new Insect("mosquito", 6, true, false, false),
+            getInstance(),
+            getInstance()
+        };
         insects[2].setName("Bug");
 
-        for (int i = 0; i < 4; i++){
-            System.out.println(insects[i]);
+        for (Insect insect: insects){
+            System.out.println(insect);
         }
     }
 }
