@@ -12,6 +12,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Insect {
+    
     private String name;
     private int numberOfLegs;
     private boolean hasWings = false;
@@ -37,15 +38,15 @@ public class Insect {
     public void wakeUp() {
         System.out.println(name+" has been wake up.");
     }
+
     public static void main(String[] args) throws Exception {
         Insect insects[] = {
-            new Insect("Bodya", 8, false, true, false),
+            new Insect(),
             new Insect("mosquito", 6, true, false, false),
             getInstance(),
             getInstance()
         };
-        insects[2].setName("Bug");
-
+        
         for (Insect insect: insects){
             System.out.println(insect);
         }
