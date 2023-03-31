@@ -3,7 +3,8 @@ package ua.lviv.iot.algo.part1.lab1;
 import lombok.ToString;
 
 @ToString(callSuper=true)
-public class Hornet extends Insect{
+public class Ant extends Insect{
+
     @Override
     public boolean canInjectPoison() {
         return isDangerous();
@@ -14,7 +15,7 @@ public class Hornet extends Insect{
         return true;
     }
 
-    Hornet(String name, int numberOfLegs, boolean hasWings, boolean isDangerous) {
+    Ant(String name, int numberOfLegs, boolean hasWings, boolean isDangerous) {
         super(name, numberOfLegs, hasWings, isDangerous);
     }
 }

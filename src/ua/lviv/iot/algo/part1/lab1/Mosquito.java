@@ -6,7 +6,7 @@ import lombok.ToString;
 public class Mosquito extends Insect{
     @Override
     public boolean canInjectPoison() {
-        return false;
+        return isDangerous();
     }
 
     @Override

@@ -1,8 +1,10 @@
 package ua.lviv.iot.algo.part1.lab1;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.ToString;
 
+@Getter
 @AllArgsConstructor
 @ToString
 public abstract class Insect {
