@@ -4,7 +4,6 @@ import lombok.ToString;
 
 @ToString(callSuper=true)
 public class Hornet extends Insect{
-    private int number;
     @Override
     public boolean canInjectPoison() {
         return isDangerous();
@@ -15,8 +14,7 @@ public class Hornet extends Insect{
         return true;
     }
 
-    Hornet(String name, int numberOfLegs, boolean hasWings, boolean isDangerous, int number) {
+    Hornet(String name, int numberOfLegs, boolean hasWings, boolean isDangerous) {
         super(name, numberOfLegs, hasWings, isDangerous);
-        this.number = number;
     }
 }

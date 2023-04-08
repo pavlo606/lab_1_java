@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class InsectManager {
     private List<Insect> insects = new ArrayList<>();
 
@@ -26,8 +33,8 @@ public class InsectManager {
     public static void main(String[] args) {
         InsectManager manager = new InsectManager();
 
-        manager.addInsect(new Hornet("first hornet", 6, true, true, 159));
-        manager.addInsect(new Hornet("second hornet", 6, true, true, 159));
+        manager.addInsect(new Hornet("first hornet", 6, true, true));
+        manager.addInsect(new Hornet("second hornet", 6, true, true));
 
         manager.addInsect(new Mosquito("first mosquito", 6, true, false));
         manager.addInsect(new Mosquito("second mosquito", 6, true, true));
