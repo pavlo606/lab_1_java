@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,22 +11,23 @@ public class InsectManager {
         insects.add(insect);
     }
 
-    public List<Insect> findDangerous() {
+    public List<Insect> findDangerousInsects() {
         return insects.stream()
-                    .filter(insect -> insect.isDangerous())
-                    .collect(Collectors.toList());
+                        .filter(insect -> insect.isDangerous())
+                        .collect(Collectors.toList());
     }
 
     public List<Insect> findWithWings() {
         return insects.stream()
-                    .filter(insect -> insect.isHasWings())
-                    .collect(Collectors.toList());
+                        .filter(insect -> insect.isHasWings())
+                        .collect(Collectors.toList());
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         InsectManager manager = new InsectManager();
 
-        manager.addInsect(new Hornet("first hornet", 6, true, true));
-        manager.addInsect(new Hornet("second hornet", 6, true, true));
+        manager.addInsect(new Hornet("first hornet", 6, true, true, 159));
+        manager.addInsect(new Hornet("second hornet", 6, true, true, 159));
 
         manager.addInsect(new Mosquito("first mosquito", 6, true, false));
         manager.addInsect(new Mosquito("second mosquito", 6, true, true));
@@ -38,13 +39,13 @@ public class InsectManager {
         manager.addInsect(new Ant("second Ant", 6, false, true));
 
         System.out.println("Dangerous insects:");
-        List<Insect> dangerousInsects = manager.findDangerous();
+        List<Insect> dangerousInsects = manager.findDangerousInsects();
         dangerousInsects.stream()
-                    .forEach(System.out::println);
+                          .forEach(System.out::println);
 
-        System.out.println("Flying insects:");
+        System.out.println("\nFlying insects:");
         List<Insect> flyingInsects = manager.findWithWings();
         flyingInsects.stream()
-                    .forEach(System.out::println);
+                       .forEach(System.out::println);
     }
 }
