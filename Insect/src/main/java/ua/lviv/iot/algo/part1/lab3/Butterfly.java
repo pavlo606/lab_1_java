@@ -2,8 +2,8 @@ package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.ToString;
 
-@ToString(callSuper=true)
-public class Butterfly extends Insect {
+@ToString(callSuper = true)
+public final class Butterfly extends Insect {
     @Override
     public boolean canInjectPoison() {
         return false;
@@ -13,8 +13,9 @@ public class Butterfly extends Insect {
     public boolean surviveOverWinter() {
         return false;
     }
-    
-    Butterfly(String name, int numberOfLegs, boolean hasWings, boolean isDangerous) {
+
+    Butterfly(final String name, final int numberOfLegs,
+                final boolean hasWings, final boolean isDangerous) {
         super(name, numberOfLegs, hasWings, isDangerous);
     }
 }
