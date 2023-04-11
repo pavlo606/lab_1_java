@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,11 +38,9 @@ public class InsectManagerTest {
     public void findDangerousInsectsTest() {
         List<Insect> actualInsects = manager.findDangerousInsects();
         List<Insect> expectedInsects = new ArrayList<>();
-        for (Insect insect: manager.getInsects()) {
-            if (insect.isDangerous()) {
-                expectedInsects.add(insect);
-            }
-        }
+        expectedInsects = manager.getInsects().stream()
+                                                .filter(insect -> insect.isDangerous())
+                                                .collect(Collectors.toList());
 
         assertEquals(expectedInsects, actualInsects);
     }
@@ -50,11 +49,9 @@ public class InsectManagerTest {
     public void findWithWingsTest() {
         List<Insect> actualInsects = manager.findWithWings();
         List<Insect> expectedInsects = new ArrayList<>();
-        for (Insect insect: manager.getInsects()) {
-            if (insect.isHasWings()) {
-                expectedInsects.add(insect);
-            }
-        }
+        expectedInsects = manager.getInsects().stream()
+                                                .filter(insect -> insect.isHasWings())
+                                                .collect(Collectors.toList());
 
         assertEquals(expectedInsects, actualInsects);
     }
