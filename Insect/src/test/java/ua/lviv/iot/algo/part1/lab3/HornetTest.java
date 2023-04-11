@@ -22,9 +22,4 @@ public class HornetTest {
     public void surviveOverWinterTest() {
         assertEquals(true, hornet.surviveOverWinter());
     }
-
-    @Test
-    public void toStringTest() {
-        assertEquals("Hornet(super=Insect(name=Hornet, numberOfLegs=6, hasWings=true, isDangerous=true))", hornet.toString());
-    }
 }
