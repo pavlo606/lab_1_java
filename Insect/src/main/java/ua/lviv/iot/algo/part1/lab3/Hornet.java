@@ -1,10 +1,9 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.ToString;
 
-@ToString(callSuper=true)
-public class Ant extends Insect{
-
+@ToString(callSuper = true)
+public final class Hornet extends Insect {
     @Override
     public boolean canInjectPoison() {
         return isDangerous();
@@ -15,7 +14,8 @@ public class Ant extends Insect{
         return true;
     }
 
-    Ant(String name, int numberOfLegs, boolean hasWings, boolean isDangerous) {
+    Hornet(final String name, final int numberOfLegs,
+            final boolean hasWings, final boolean isDangerous) {
         super(name, numberOfLegs, hasWings, isDangerous);
     }
 }
