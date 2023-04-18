@@ -4,6 +4,8 @@ import lombok.ToString;
 
 @ToString(callSuper = true)
 public final class Ant extends Insect {
+    private String species;
+
     @Override
     public boolean canInjectPoison() {
         return isDangerous();
@@ -16,16 +18,17 @@ public final class Ant extends Insect {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders();
-    } 
+        return super.getHeaders() + ",species";
+    }
 
     @Override
     public String getCSV() {
-        return super.getCSV();
+        return super.getCSV() + "," + species;
     }
 
     public Ant(final String name, final int numberOfLegs,
-            final boolean hasWings, final boolean isDangerous) {
+            final boolean hasWings, final boolean isDangerous, final String species) {
         super(name, numberOfLegs, hasWings, isDangerous);
+        this.species = species;
     }
 }

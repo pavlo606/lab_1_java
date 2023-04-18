@@ -1,7 +1,6 @@
 package ua.lviv.iot.algo.part1.lab3;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,12 +32,7 @@ public final class InsectManager {
 
     public List<Insect> sortInsects() {
         return insects.stream()
-                        .sorted(Comparator.comparingInt(insect -> {
-                            if (insect instanceof Ant) { return 0; }
-                            else if (insect instanceof Butterfly) { return 1; }
-                            else if (insect instanceof Hornet) { return 2; }
-                            else { return 3; }
-                        }))
+                        .sorted((o1, o2) -> o1.getClass().toString().compareTo(o2.getClass().toString()))
                         .toList();
     }
 }

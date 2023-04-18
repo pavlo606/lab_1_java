@@ -10,12 +10,12 @@ public class AntTest {
 
     @BeforeEach
     public void setUp() {
-        ant = new Ant("Ant", 6, false, false);
+        ant = new Ant("Ant", 6, false, true, "Fire ant");
     }
 
     @Test
     public void canInjectPoisonTest() {
-        assertEquals(false, ant.canInjectPoison());
+        assertEquals(true, ant.canInjectPoison());
     }
 
     @Test 

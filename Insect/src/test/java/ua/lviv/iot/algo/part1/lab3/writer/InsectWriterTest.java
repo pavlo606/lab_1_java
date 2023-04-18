@@ -29,13 +29,13 @@ public class InsectWriterTest {
         writer = new InsectWriter();
         insects = new ArrayList<>();
 
-        insects.add(new Hornet("Hornet1", 6, true, true));
-        insects.add(new Ant("Ant1", 6, false, false));
-        insects.add(new Hornet("Hornet2", 6, true, true));
-        insects.add(new Mosquito("Mosquito1", 6, true, true));
-        insects.add(new Mosquito("Mosquito2", 6, true, true));
-        insects.add(new Butterfly("Butterfly", 4, true, false));
-        insects.add(new Ant("Ant2", 6, false, false));
+        insects.add(new Hornet("Hornet1", 6, true, true, "Vespa crabro"));
+        insects.add(new Ant("Ant1", 6, false, true, "Fire ant"));
+        insects.add(new Hornet("Hornet2", 6, true, true, "Vespa ducalis"));
+        insects.add(new Mosquito("Mosquito1", 6, true, true, true));
+        insects.add(new Mosquito("Mosquito2", 6, true, false, false));
+        insects.add(new Butterfly("Butterfly", 4, true, false, "Red"));
+        insects.add(new Ant("Ant2", 6, false, true, "Bullet ant"));
 
         Files.deleteIfExists(Path.of(RESULT_FILE));
     }

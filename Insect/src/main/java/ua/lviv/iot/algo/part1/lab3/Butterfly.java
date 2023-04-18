@@ -4,6 +4,8 @@ import lombok.ToString;
 
 @ToString(callSuper = true)
 public final class Butterfly extends Insect {
+    private String color;
+
     @Override
     public boolean canInjectPoison() {
         return false;
@@ -16,16 +18,17 @@ public final class Butterfly extends Insect {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders();
-    } 
+        return super.getHeaders() + ",color";
+    }
 
     @Override
     public String getCSV() {
-        return super.getCSV();
+        return super.getCSV() + "," + color;
     }
 
     public Butterfly(final String name, final int numberOfLegs,
-                final boolean hasWings, final boolean isDangerous) {
+                final boolean hasWings, final boolean isDangerous, final String color) {
         super(name, numberOfLegs, hasWings, isDangerous);
+        this.color = color;
     }
 }

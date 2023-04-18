@@ -10,7 +10,7 @@ public class ButterflyTest {
 
     @BeforeEach
     public void setUp() {
-        butterfly = new Butterfly("Butterfly", 4, true, false);
+        butterfly = new Butterfly("Butterfly", 4, true, false, "Blue");
     }
 
     @Test

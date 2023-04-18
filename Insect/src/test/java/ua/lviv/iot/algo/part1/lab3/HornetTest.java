@@ -10,7 +10,7 @@ public class HornetTest {
 
     @BeforeEach
     public void setUp() {
-        hornet = new Hornet("Hornet", 6, true, true);
+        hornet = new Hornet("Hornet", 6, true, true, "Vespa crabro");
     }
 
     @Test

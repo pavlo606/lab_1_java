@@ -18,7 +18,7 @@ public abstract class Insect {
 
     public String getHeaders() {
         return "name,numberOfLegs,hasWings,isDangerous";
-    } 
+    }
 
     public String getCSV() {
         return name + "," + numberOfLegs + "," + hasWings + "," + isDangerous;

@@ -4,14 +4,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import ua.lviv.iot.algo.part1.lab3.*;
+import ua.lviv.iot.algo.part1.lab3.Insect;
+import ua.lviv.iot.algo.part1.lab3.InsectManager;
 
 public class InsectWriter {
-    public void writeToFile(final List<Insect> insects) throws IOException{
+    public final void writeToFile(final List<Insect> insects) {
         InsectManager manager = new InsectManager(insects);
         List<Insect> sortedInsects = manager.sortInsects();
-        
-        try (FileWriter fileWriter = new FileWriter("result.csv");) {
+
+        try (FileWriter fileWriter = new FileWriter("result.csv")) {
             Insect lastInsect = sortedInsects.get(0);
             fileWriter.write(lastInsect.getHeaders() + '\n');
 
@@ -20,13 +21,13 @@ public class InsectWriter {
                     fileWriter.write(insect.getHeaders() + '\n');
                 }
                 fileWriter.write(insect.getCSV() + '\n');
-                System.out.println("Wrote to file " + insect.getCSV());
 
                 lastInsect = insect;
             }
-            
+
             fileWriter.close();
-            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

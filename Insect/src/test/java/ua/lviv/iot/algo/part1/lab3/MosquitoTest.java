@@ -10,7 +10,7 @@ public class MosquitoTest {
 
     @BeforeEach
     public void setUp() {
-        mosquito = new Mosquito("Mosquito", 6, true, false);
+        mosquito = new Mosquito("Mosquito", 6, true, false, true);
     }
 
     @Test
