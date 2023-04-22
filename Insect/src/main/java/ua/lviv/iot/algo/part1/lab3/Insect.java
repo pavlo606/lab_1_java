@@ -15,4 +15,12 @@ public abstract class Insect {
 
     public abstract boolean canInjectPoison();
     public abstract boolean surviveOverWinter();
+
+    public String getHeaders() {
+        return "name,numberOfLegs,hasWings,isDangerous";
+    }
+
+    public String getCSV() {
+        return name + "," + numberOfLegs + "," + hasWings + "," + isDangerous;
+    }
 }
