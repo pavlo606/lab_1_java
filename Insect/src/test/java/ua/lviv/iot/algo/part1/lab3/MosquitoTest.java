@@ -1,6 +1,7 @@
 package ua.lviv.iot.algo.part1.lab3;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,5 +22,15 @@ public class MosquitoTest {
     @Test 
     public void surviveOverWinterTest() {
         assertEquals(false, mosquito.surviveOverWinter());
+    }
+
+    @Test
+    public void getHeadersTest() {
+        assertTrue(mosquito.getHeaders().contains(",isVectorOfDisease"));
+    }
+
+    @Test
+    public void getCSVTest() {
+        assertTrue(mosquito.getCSV().contains("," + mosquito.isVectorOfDisease()));
     }
 }

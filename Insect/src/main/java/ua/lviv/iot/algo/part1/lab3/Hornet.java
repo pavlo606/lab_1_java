@@ -1,7 +1,9 @@
 package ua.lviv.iot.algo.part1.lab3;
 
+import lombok.Getter;
 import lombok.ToString;
 
+@Getter
 @ToString(callSuper = true)
 public final class Hornet extends Insect {
     private String species;
